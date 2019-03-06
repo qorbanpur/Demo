@@ -1,0 +1,12 @@
+{
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "version": "2.0.0",
+  "options": {
+    "inputs": [
+      "http://localhost:11012/Services/UserService.svc"
+    ],
+    "outputFile": "Reference.cs",
+    "targetFramework": "netcoreapp3.0",
+    "typeReuseMode": "All"
+  }
+}
