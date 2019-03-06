@@ -33,14 +33,14 @@ namespace WebApplication.DtoModels
 
         public ICollection<SubscriptionDto> Subscriptions
         {
-            get
-            {
-                var result = new UserServiceReference.UserServiceClient().GetSubscriptionsAsync(this.UserId).GetAwaiter().GetResult();
+            get;
+            //{
+            //    var result = new UserServiceReference.UserServiceClient().GetSubscriptionsAsync(this.UserId).GetAwaiter().GetResult();
 
-                return AutoMapper.Mapper.Map<List<UserServiceReference.Subscription>, List<SubscriptionDto>>(result);
-            }
+            //    return AutoMapper.Mapper.Map<List<UserServiceReference.Subscription>, List<SubscriptionDto>>(result);
+            //}
 
-            set { }
+            set;
         }
     }
 }

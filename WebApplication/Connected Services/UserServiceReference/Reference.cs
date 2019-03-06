@@ -24,6 +24,8 @@ namespace UserServiceReference
         
         private string LastNameField;
         
+        private System.Collections.Generic.List<UserServiceReference.Subscription> SubscriptionsField;
+        
         private int UserIdField;
         
         private System.Collections.Generic.List<UserServiceReference.UserSubscription> UserSubscriptionsField;
@@ -68,6 +70,19 @@ namespace UserServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<UserServiceReference.Subscription> Subscriptions
+        {
+            get
+            {
+                return this.SubscriptionsField;
+            }
+            set
+            {
+                this.SubscriptionsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int UserId
         {
             get
@@ -90,58 +105,6 @@ namespace UserServiceReference
             set
             {
                 this.UserSubscriptionsField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserSubscription", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    public partial class UserSubscription : object
-    {
-        
-        private System.Guid SubscriptionIdField;
-        
-        private int UserIdField;
-        
-        private System.Guid UserSubscriptionIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid SubscriptionId
-        {
-            get
-            {
-                return this.SubscriptionIdField;
-            }
-            set
-            {
-                this.SubscriptionIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserId
-        {
-            get
-            {
-                return this.UserIdField;
-            }
-            set
-            {
-                this.UserIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid UserSubscriptionId
-        {
-            get
-            {
-                return this.UserSubscriptionIdField;
-            }
-            set
-            {
-                this.UserSubscriptionIdField = value;
             }
         }
     }
@@ -239,6 +202,58 @@ namespace UserServiceReference
             set
             {
                 this.UserSubscriptionsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserSubscription", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
+    public partial class UserSubscription : object
+    {
+        
+        private System.Guid SubscriptionIdField;
+        
+        private int UserIdField;
+        
+        private System.Guid UserSubscriptionIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid SubscriptionId
+        {
+            get
+            {
+                return this.SubscriptionIdField;
+            }
+            set
+            {
+                this.SubscriptionIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId
+        {
+            get
+            {
+                return this.UserIdField;
+            }
+            set
+            {
+                this.UserIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid UserSubscriptionId
+        {
+            get
+            {
+                return this.UserSubscriptionIdField;
+            }
+            set
+            {
+                this.UserSubscriptionIdField = value;
             }
         }
     }

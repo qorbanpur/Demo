@@ -11,7 +11,7 @@ namespace DAL
         public User()
         {
             UserSubscriptions = new List<UserSubscription>();
-            //Subscriptions = new List<Subscription>();
+            Subscriptions = new List<Subscription>();
         }
 
         [DataMember]
@@ -29,27 +29,27 @@ namespace DAL
         [DataMember]
         public ICollection<UserSubscription> UserSubscriptions { get; set; }
 
-        //[DataMember]
-        //[NotMapped]
-        //public ICollection<Subscription> Subscriptions
-        //{
-        //    get
-        //    {
-        //        var result = new List<Subscription>();
+        [DataMember]
+        [NotMapped]
+        public ICollection<Subscription> Subscriptions
+        {
+            get;
+            //{
+            //    var result = new List<Subscription>();
 
-        //        if (this.UserId > 0)
-        //        {
-        //            var context = new DBContext();
-        //            var userSubscriptions = context.UserSubscriptions.Where(us => us.UserId == this.UserId).ToList();
+            //    if (this.UserId > 0)
+            //    {
+            //        var context = new DBContext();
+            //        var userSubscriptions = context.UserSubscriptions.Where(us => us.UserId == this.UserId).ToList();
 
-        //            if (userSubscriptions.Any())
-        //                result = context.Subscriptions.Where(s => userSubscriptions.Select(us => us.SubscriptionId).Contains(s.SubscriptionId)).ToList();
-        //        }
+            //        if (userSubscriptions.Any())
+            //            result = context.Subscriptions.Where(s => userSubscriptions.Select(us => us.SubscriptionId).Contains(s.SubscriptionId)).ToList();
+            //    }
 
-        //        return result;
-        //    }
+            //    return result;
+            //}
 
-        //    set { }
-        //}
+            set;
+        }
     }
 }

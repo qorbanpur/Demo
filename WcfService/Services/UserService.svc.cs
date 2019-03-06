@@ -50,7 +50,9 @@ namespace WcfService.Services
         {
             try
             {
-                return _entityHelper.Get(id);
+                var user = _entityHelper.Get(id);
+                user.Subscriptions = GetSubscriptions(user.UserId);
+                return user;
             }
             catch (Exception ex)
             {
@@ -62,7 +64,12 @@ namespace WcfService.Services
         {
             try
             {
-                return _entityHelper.Get();
+                var users = _entityHelper.Get();
+
+                foreach (var user in users)
+                    user.Subscriptions = GetSubscriptions(user.UserId);
+
+                return users;
             }
             catch (Exception ex)
             {

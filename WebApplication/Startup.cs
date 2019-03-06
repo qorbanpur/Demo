@@ -13,7 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication.DtoModels;
 using AutoMapper;
 using WebApplication.Data;
-using WebApplication.Models;
 using SubscriptionServiceReference;
 using System.ServiceModel;
 using UserServiceReference;
@@ -96,7 +95,7 @@ namespace WebApplication
 
             AutoMapper.Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<UserServiceReference.User, UserDto>();//.ForMember(x => x.Subscriptions, y => y.MapFrom(z => z.Subscriptions));
+                cfg.CreateMap<UserServiceReference.User, UserDto>().ForMember(x => x.Subscriptions, y => y.MapFrom(z => z.Subscriptions));
                 cfg.CreateMap<UserDto, UserServiceReference.User>();
                 cfg.CreateMap<SubscriptionServiceReference.Subscription, SubscriptionDto>();
                 cfg.CreateMap<SubscriptionDto, SubscriptionServiceReference.Subscription>();
