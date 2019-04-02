@@ -15,12 +15,12 @@ namespace WebApplication.Controllers
     [ApiController]
     public class SubscriptionsController : ControllerBase
     {
-        private readonly SubscriptionServiceClient _serviceReference;
+        private readonly ISubscriptionService _serviceReference;
 
-        public SubscriptionsController()
+        public SubscriptionsController(ISubscriptionService serviceReference)
         {
             //_serviceReference = new SubscriptionServiceClient(new BasicHttpBinding(), new EndpointAddress(Startup.Configuration["EndpointAddresses:SubscriptionServiceClient"]));
-            _serviceReference = new SubscriptionServiceClient();
+            _serviceReference = serviceReference;
         }
 
         // GET: Subscriptions

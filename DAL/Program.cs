@@ -9,11 +9,6 @@ namespace DAL
     {
         static void Main(string[] args)
         {
-            using (var db = new DBContext())
-            {
-                
-            }
-
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }

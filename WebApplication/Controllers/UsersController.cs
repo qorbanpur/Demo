@@ -15,12 +15,12 @@ namespace WebApplication.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserServiceClient _serviceReference;
+        private readonly IUserService _serviceReference;
 
-        public UsersController()
+        public UsersController(IUserService serviceReference)
         {
             //_serviceReference = new UserServiceClient(new BasicHttpBinding(), new EndpointAddress(Startup.Configuration["EndpointAddresses:UserServiceClient"]));
-            _serviceReference = new UserServiceClient();
+            _serviceReference = serviceReference;
         }
 
         // GET: Users
